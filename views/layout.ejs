@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>E-Nutrition</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">	
+</head>
+
+<body>
+	<section class="encabezado">
+		<h2>E-nutrition: Innovando para tu salud</h2>
+	</section>
+<!--
+	<header class="categorias">
+		<nav class="menu" id="menu">
+			<ul>
+				<li><a href="/"><figure><img src="../images/home.png"><figcaption><p>Inicio</p></figcaption></figure></a></li>
+
+				<li><a href="/menu/fruta"><figure><img src="../images/frutas.png"><figcaption><p>Frutas</p></figcaption></figure></a></li>
+
+				<li><a href="/menu/verdura"><figure><img src="../images/verduras.png"><figcaption><p>Verduras</p></figcaption></figure></a></li>
+
+				<li><a href="/menu/plantas"><figure><img src="../images/plantas.png"><figcaption><p>Plantas</p></figcaption></figure></a></li>
+
+				<li><a href="/menu/cereal"><figure><img src="../images/cereales.png"><figcaption><p>Cereales</p></figcaption></figure></a></li>
+			</ul>
+		</nav>
+	</header>
+-->
+<header class="categorias">
+    <nav id="menu" class="menu">
+        <a href="#" class="nav-mobile" id="nav-mobile"></a>
+        <ul>
+            <li><a href="/"><figure><img src="../images/home.png"><figcaption>Inicio</figcaption></figure></a></li>
+
+            <li><a href="/menu/fruta"><figure><img src="../images/frutas.png"><figcaption>Frutas</figcaption></figure></a></li>
+
+            <li><a href="/menu/verdura"><figure><img src="../images/verduras.png"><figcaption>Verduras</figcaption></figure></a></li>
+            
+            <li><a href="/menu/planta"><figure><img src="../images/plantas.png"><figcaption>Plantas</figcaption></figure></a></li>
+
+            <li><a href="/menu/cereal"><figure><img src="../images/cereales.png"><figcaption>Cereales</figcaption></figure></a></li>
+        </ul>
+    </nav>
+</header>
+
+
+	<section class="main">
+		<%- body %>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(function() {
+
+        var btn_movil = $('#nav-mobile'),
+            menu = $('#menu').find('ul');
+
+        // Al dar click agregar/quitar clases que permiten el despliegue del menú
+        btn_movil.on('click', function (e) {
+            e.preventDefault();
+
+            var el = $(this);
+
+            el.toggleClass('nav-active');
+            menu.toggleClass('open-menu');
+        })
+
+    });
+</script>
+
+</body>
+</html>
