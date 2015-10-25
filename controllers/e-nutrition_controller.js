@@ -16,3 +16,11 @@ exports.cereal = function(req, res){
 	res.render('menu/cereal');
 };
 
+exports.registro = function(req, res){
+	res.render('sesion/registro');
+};
+
+exports.ingresar = function(req, res){
+	res.render('sesion/ingresar');
+};
+
