@@ -14,26 +14,13 @@
 	<section class="encabezado">
 		<h2>E-nutrition: Innovando para tu salud</h2>
 	</section>
-<!--
-	<header class="categorias">
-		<nav class="menu" id="menu">
-			<ul>
-				<li><a href="/"><figure><img src="../images/home.png"><figcaption><p>Inicio</p></figcaption></figure></a></li>
 
-				<li><a href="/menu/fruta"><figure><img src="../images/frutas.png"><figcaption><p>Frutas</p></figcaption></figure></a></li>
-
-				<li><a href="/menu/verdura"><figure><img src="../images/verduras.png"><figcaption><p>Verduras</p></figcaption></figure></a></li>
-
-				<li><a href="/menu/plantas"><figure><img src="../images/plantas.png"><figcaption><p>Plantas</p></figcaption></figure></a></li>
-
-				<li><a href="/menu/cereal"><figure><img src="../images/cereales.png"><figcaption><p>Cereales</p></figcaption></figure></a></li>
-			</ul>
-		</nav>
-	</header>
--->
 <header class="categorias">
+	<input type="checkbox" id="check-nav">
+    <label class="menu-icono" for="check-nav">
+		<span class="icon-menu"></span>
+	</label>
     <nav id="menu" class="menu">
-        <a href="#" class="nav-mobile" id="nav-mobile"><span class="icon-menu"></span></a>
         <ul>
             <li><a href="/"><figure><img src="../images/home.png"><figcaption>Inicio</figcaption></figure></a></li>
 
@@ -56,25 +43,6 @@
 	<section class="main">
 		<%- body %>
 	</section>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
-    $(function() {
-
-        var btn_movil = $('#nav-mobile'),
-            menu = $('#menu').find('ul');
-
-        // Al dar click agregar/quitar clases que permiten el despliegue del menú
-        btn_movil.on('click', function (e) {
-            e.preventDefault();
-
-            var el = $(this);
-
-            el.toggleClass('nav-active');
-            menu.toggleClass('open-menu');
-        })
-
-    });
-</script>
 
 </body>
 </html>
