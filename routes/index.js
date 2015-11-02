@@ -18,8 +18,8 @@ router.get('/menu/fruta',enutritionController.fruta);
 router.get('/menu/verdura',enutritionController.verdura);
 router.get('/menu/planta',enutritionController.planta);
 router.get('/menu/cereal',enutritionController.cereal);
-router.get('/sesion/ingresar',enutritionController.ingresar);
-//router.get('/sesion/listaUsuarios',enutritionController.listaUsuarios);
+//router.get('/sesion/ingresar',enutritionController.ingresar);
+router.get('/sesion/listaUsuarios',enutritionController.listaUsuarios);
 router.get('/sesion/registro',enutritionController.registro);
 router.post('/sesion/create',enutritionController.create);
 
