@@ -12,7 +12,8 @@
 		background: url('/images/bg.png');
 	}
 
-	#nav-mobile{
+
+	#check-nav,.menu-icono{
 		display: none;
 	}
 
@@ -530,6 +531,10 @@
 		margin: 5% 0 0 20%;
 	}
 
+	.main #formulario label,#formulario-ingresar label{
+		font-size: 1rem;
+	}
+
 	.main #formulario input,#formulario-ingresar input{
 		height: 20px;
 		padding: .2em;
@@ -541,7 +546,7 @@
 
 	.main #formulario-ingresar .btn{
 		height: 40px;
-		margin: 5% 0 0 40%;
+		margin: 5% 0 0 35%;
 	}
 
 	.main #formulario-ingresar div{

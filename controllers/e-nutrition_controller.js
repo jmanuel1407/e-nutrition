@@ -16,32 +16,23 @@ exports.cereal = function(req, res){
 	res.render('menu/cereal');
 };
 
-exports.ingresar = function(req, res){
-	res.render('sesion/ingresar');
-};
-
-exports.listaUsuarios = function(req,res){
-	models.Usuarios.findAll().success(function(usuarios){
-		res.render('sesion/usuarios',{user:usuarios[0].usuario})
-	})
-};
-
 exports.registro = function(req, res){
-	var usuarios=models.Usuarios.build({
+	var user=models.User.build({
 		usuario:"Usuario",nip:"Nip",correo:"Correo",
 		edad:"Edad",sexo:"Sexo",peso:"Peso"});
 	
-	res.render('sesion/registro',{usuarios:usuarios});
+	res.render('sesion/registro',{user:user});
 };
 
 //POST Recibe los datos para guardar al nuevo usuario en la DB
-exports.create= function(req, res){
-	//usuarioN
-	var usuarios = models.Usuarios.build(req.body.usuarios);
+exports.create = function(req, res) {
+    var user = models.User.build( req.body.user );
+                user.save({fields: ['username', 'password',
+                	'correo','edad','sexo','peso']}).then(function(){
+                    res.redirect('/');
+                });
+};
 
-	//Guardar en la DB los datos
-	usuarios.save({fields:["usuario","nip","correo","edad",
-		"sexo","peso"]}).then(function(){
-		res.redirect('/');
-	})
+exports.perfil = function(req, res){
+	res.render('sesion/perfil');
 };

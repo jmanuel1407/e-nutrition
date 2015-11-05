@@ -1,16 +1,41 @@
-var users={
-  admin:
-  {id:1, username:"admin",password:"1234"}
-};
+var models = require('../models/models.js');
 
-exports.autenticar = function (login,password,callback){
-  if(users[login]){
-    if(password===users[login].password){
-      callback(null,users[login]);
+// Autoload :id
+exports.load = function(req, res, next, userId) {
+  models.User.find({
+            where: {
+                id: Number(userId)
+            }
+        }).then(function(user) {
+      if (user) {
+        req.user = user;
+        next();
+      } else{next(new Error('No existe userId=' + userId))}
     }
-    else{
-      callback(new Error('password errorneo.'));}
-  }else {callback(new Error ('No existe el usuario'));}
+  ).catch(function(error){next(error)});
+};
+
+// Comprueba si el usuario esta registrado en users
+exports.autenticar = function(login, password, callback) {
+	models.User.find({
+        where: {
+            username: login
+        }
+    }).then(function(user) {
+    	if (user) {
+    		if(user.validarPassword(password)){
+            	callback(null, user);
+        	}
+        	else { callback(new Error('Password erróneo.')); } 	
+      	} else { callback(new Error('No existe user=' + login))}
+    }).catch(function(error){callback(error)});
 };
 
 
+// DELETE /user/
+exports.destroy = function(req, res) {
+  req.user.destroy().then( function() {
+    delete req.session.user;
+    res.redirect('/');
+  }).catch(function(error){next(error)});
+};
