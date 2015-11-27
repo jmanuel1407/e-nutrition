@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html manifest="manifest.appcache">
 
 <head>
 	<meta charset="utf-8">
@@ -33,20 +33,19 @@
             <li><a href="/menu/cereal"><figure><img src="../images/cereales.png"><figcaption>Cereales</figcaption></figure></a></li>
 
             <%if(!session.user){%>
-            	<li id="login"><a href="/login">Ingresar</a></li>
-            	<li  id="login"><a href="/sesion/registro">Registrarse</a></li>
+            	<li class="login"><a href="/login">Ingresar</a></li>
+            	<li class="login"><a href="/sesion/registro">Registrarse</a></li>
         	<%}else{%>
-               <li id="login"><a href="/perfil"><%=session.user.username%></a></li>
-        	   <li id="login"><a href="/logout">Salir</a></li>
+               <li class="login"><a href="/perfil"><%=session.user.username%></a></li>
+        	   <li class="login"><a href="/logout">Salir</a></li>
         	<%}%>
         </ul>
     </nav>
 </header>
 
-
-	<section class="main">
-		<%- body %>
-	</section>
+<section class="main">
+    <%- body %>
+</section>
 
 </body>
 </html>
