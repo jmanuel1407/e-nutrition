@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+# 2
+
+CACHE:
+stylesheets/style.css
+images/logoL.jpg
+images/logoM.jpg
+images/logoH.jpg
+favicon.ico
+fonts/icomoon/selection.json
+fonts/icomoon/style.css
+fonts/icomoon/fonts/icomoon.ttf?-j6emu2
+fonts/icomoon/fonts/icomoon.woff?-j6emu2
+/sesion/ingresar.ejs
+
