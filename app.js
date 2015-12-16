@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var partials = require('express-partials');
 var session = require('express-session');
 var routes = require('./routes/index');
-var PouchDB = require('pouchdb');
+
 
 var app = express();
 
@@ -31,9 +31,6 @@ app.get('/app.cache', function (req, res) {
     res.set("Expires", "-1");
     res.sendFile("/views/app.cache", {root: __dirname});
 });
-
-var db = new PouchDB('usuarios');
-
 
 app.use(function(req,res,next){
   //Guardar path en session.redir para despues del login
