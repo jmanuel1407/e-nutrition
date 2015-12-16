@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache">
+<html manifest="app.cache">
 
 <head>
-	<meta charset="utf-8">
 	<title>E-Nutrition</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/icomoon/style.css">
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />	
-	<link rel="stylesheet" type="text/css" href="/fonts/icomoon/style.css">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>	
 </head>
 
 <body>
@@ -22,15 +22,15 @@
 	</label>
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="/"><figure><img src="../images/home.png"><figcaption>Inicio</figcaption></figure></a></li>
+            <li><a href="/"><figure><figcaption>Inicio</figcaption></figure></a></li>
 
-            <li><a href="/menu/fruta"><figure><img src="../images/frutas.png"><figcaption>Frutas</figcaption></figure></a></li>
+            <li><a href="/menu/fruta"><figure><figcaption>Frutas</figcaption></figure></a></li>
 
-            <li><a href="/menu/verdura"><figure><img src="../images/verduras.png"><figcaption>Verduras</figcaption></figure></a></li>
+            <li><a href="/menu/verdura"><figure><figcaption>Verduras</figcaption></figure></a></li>
             
-            <li><a href="/menu/planta"><figure><img src="../images/plantas.png"><figcaption>Plantas</figcaption></figure></a></li>
+            <li><a href="/menu/planta"><figure><figcaption>Plantas</figcaption></figure></a></li>
 
-            <li><a href="/menu/cereal"><figure><img src="../images/cereales.png"><figcaption>Cereales</figcaption></figure></a></li>
+            <li><a href="/menu/cereal"><figure><figcaption>Cereales</figcaption></figure></a></li>
 
             <%if(!session.user){%>
             	<li class="login"><a href="/login">Ingresar</a></li>

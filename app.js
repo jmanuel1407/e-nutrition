@@ -4,14 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var partials = require('express-partials');
 var session = require('express-session');
-
 var routes = require('./routes/index');
+var PouchDB = require('pouchdb');
+
 var app = express();
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,8 +17,6 @@ app.set('view engine', 'ejs');
 
 app.use(partials());
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -28,6 +24,16 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser('Quiz 2015')); //Para cifrar cookie
 app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/app.cache', function (req, res) {
+    res.set("Content-Type", "text/cache-manifest");
+    res.set("Cache-Control", "no-store, no-cache");
+    res.set("Expires", "-1");
+    res.sendFile("/views/app.cache", {root: __dirname});
+});
+
+var db = new PouchDB('usuarios');
+
 
 app.use(function(req,res,next){
   //Guardar path en session.redir para despues del login

@@ -9,7 +9,6 @@ var userController = require('../controllers/user_controller');
 router.param('userId', userController.load);  // autoload :userId
 
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'E-nutrition' });
@@ -26,7 +25,7 @@ router.get('/menu/cereal',enutritionController.cereal);
 router.get('/sesion/registro',enutritionController.registro);
 router.post('/sesion/create',enutritionController.create);
 router.get('/perfil',enutritionController.perfil);
-//router.get('/manifest.appcache',enutritionController.cache);
+
 
 
 module.exports = router;

@@ -195,13 +195,44 @@
 	width: 50%;
 }
 
-#formulario .radios{
-	margin-bottom: 5%;
+.main #formulario input[type="radio"]{
+    display: none;
 }
-.main #formulario .radios label{
+
+.main #formulario .radios{
+	overflow: hidden;
+}
+
+.main #formulario .radios div{
+	margin-left: 30%;
+	height: 35px;
+	width: 65%;
+}
+
+.main #formulario .radios div label{
 	height: 100%;
-	padding-top: 3%;
+	width: 50%;
 }
+
+.main #formulario .radios div input[type="radio"] + label span{
+	display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(/images/radio_sheet.png) -38px top no-repeat;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+
+.main #formulario .radios div input[type="radio"]:checked + label span{
+    background: url(/images/radio_sheet.png) -57px top no-repeat;
+}
+
+
+
+
+
 
 /*Tables+*************************************
 ****************************************
@@ -210,9 +241,6 @@
 */
 
 @media screen and (min-width: 960px){
-	html{
-		padding: 0;
-	}
 
 	.encabezado{
 		background: #179f12;
@@ -294,7 +322,6 @@
 		margin: 5% 0 0 5%;
 		text-align: center;
 		width: 45%;
-		border:1px solid red;
 	}
 
 	.logo img{
@@ -307,7 +334,6 @@
 		font-size: 3rem;
 		text-decoration: underline;
 		width: 45%;
-		border:1px solid red;
 	}
 
 	.descripcion{
@@ -392,22 +418,33 @@
 	}
 
 	.encabezado{
-		background: #179f12;
-		border-bottom: 5px solid #d6ae19;
+		background: #000;
+		border-bottom: 5px dashed #fff;
 		font-size: 1.8rem;
 		height: 20vh;
-		margin-left: 5%;
+		margin: 1% 0 1% 5%;
+		padding-top: 2%;
 		text-align: right;
-		width: 90%;
-		
+		width: 90%;		
+	}
+
+	.encabezado h2{
+		text-align: center;
 	}
 
 	.categorias{
+		background: transparent;
 	    height:6vh;
+	    margin-bottom: 1%;
 	    width: 90%;
 	}
 
-	.categorias img{
+	.categorias .menu ul li a{
+		height: 100%;
+	    width: 100%;
+	}
+
+	.categorias .menu figure img{
 		display: none;
 	}
 
@@ -475,32 +512,22 @@
 		width: 100%;
 	}
 
-	.main .titulo{
+	.main #titulo-index{
 		color:#0c7b9b;
-		font-family: sans-serif;
 		font-size: 3rem;
-		margin:5% 0 5% 60%;
+		margin-left: 40%;
 		text-decoration: underline;
 		width: 40%;
 	}
 
 	.main .descripcion{
 		color: #2d8a6f;
-		font-family: sans-serif;
+		display: block;
 		font-size: 1.2rem;
-		margin-left: 50%;
+		margin-left: 40%;
 		margin-top: 2%;
 		text-align: justify;
-		width: 40%;
-	}
-
-	.main .titulo-section{
-		color:#0c7b9b;
-		font-family: sans-serif;
-		font-size: 3rem;
-		margin-left: 42%;
-		text-decoration: underline;
-		width: 100%;
+		width: 50%;
 	}
 
 	.main #contenedor-frutas,#contenedor-verduras,#contenedor-plantas,#contenedor-cereales {
