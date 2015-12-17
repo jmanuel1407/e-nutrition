@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="app.cache">
+<html>
 
 <head>
 	<title>E-Nutrition</title>
@@ -22,15 +22,15 @@
 	</label>
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="/"><figure><figcaption>Inicio</figcaption></figure></a></li>
+            <li><a href="/">Inicio</a></li>
 
-            <li><a href="/menu/fruta"><figure><figcaption>Frutas</figcaption></figure></a></li>
+            <li><a href="/menu/fruta">Frutas</a></li>
 
-            <li><a href="/menu/verdura"><figure><figcaption>Verduras</figcaption></figure></a></li>
+            <li><a href="/menu/verdura">Verduras</a></li>
             
-            <li><a href="/menu/planta"><figure><figcaption>Plantas</figcaption></figure></a></li>
+            <li><a href="/menu/planta">Plantas</a></li>
 
-            <li><a href="/menu/cereal"><figure><figcaption>Cereales</figcaption></figure></a></li>
+            <li><a href="/menu/cereal">Cereales</a></li>
 
             <%if(!session.user){%>
             	<li class="login"><a href="/login">Ingresar</a></li>
@@ -40,6 +40,7 @@
         	   <li class="login"><a href="/logout">Salir</a></li>
         	<%}%>
         </ul>
+
     </nav>
 </header>
 

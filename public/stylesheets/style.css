@@ -30,7 +30,7 @@
 	font-size: 2.5rem;
 	opacity: 0.8;
 	text-align: center;
-	width: 20%;
+	width: 20vw;
 }
 
 #check-nav:checked ~ .menu-icono{
@@ -47,19 +47,53 @@
 #check-nav:checked ~ .menu{
 	height: auto; 
 }
-
-.menu figure img{
-	display: none;
+/*.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: left;
+  background-color: grey;
+  left: 5px;
+  top: 5px;
+  height: 26px;
+  color: white;
+  border-color: black;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  -moz-box-shadow: 2px 2px 1px black;
+  padding: 2px 4px;
+  border: solid 1px black;
 }
 
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  background-color:white;
+  color:black;
+  -moz-box-shadow: 2px 2px 1px black;
+} */
+
+
 .menu ul li{
-	background-color: #01182c;
+	background-color: #01182C;
 	border-bottom: 1.5px groove #fff;
 	display: block;
 	height: 40px;
 	list-style: none;
 	text-align: center;
-	width: 100%;
+	width: 100vw;
 	z-index: 5;
 }
 
@@ -96,13 +130,14 @@
 .main{
 	height: 90vh;
 	margin-top: 50px;
-	width: 100%;
+	width: 100vw;
 	text-align: center;
+    padding: 1%;
 }
 
 .main .logo{
 	height: 60%;
-	margin: 20% 10% 5%;
+	margin: 7%;
 	width: 80%;
 }
 
@@ -123,32 +158,46 @@
 .main .descripcion{
 	display: none;
 }
-
-.main #contenedor-frutas,#contenedor-verduras,#contenedor-plantas,#contenedor-cereales {
+                            
+.main #contenedor-frutas,.main #contenedor-verduras,.main #contenedor-plantas,.main #contenedor-cereales {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
-	overflow: scroll;
 }
 
 .main .frutas, .verduras, .plantas,.cereales{
-	height: 100px;
+	height: 30vh;
 	text-align: center;
-	width: 100px;
+	width:47vw;
+    margin: 1vw;
+    margin-bottom: 1vh;
+    overflow: hidden;
 }
 
 .main .frutas a,.verduras a,.plantas a,.cereales a{
 	display: block;
 	text-decoration: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%; 
+}
+.frutas figure,.verduras figure,.plantas figure,.cereales figure{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .main .frutas a figcaption,.verduras a figcaption,.plantas a figcaption,.cereales a figcaption{
 	background-color: #179f12;
-	border-radius: 5px;
+	border-radius: 4px;
 	color: #fff;
-	margin-bottom: 0;
+    height: 16%;
 	width: 100%;
+    font-weight: bold;
+    vertical-align: middle;
+     line-height: 30px;
+   
 }
 
 .main .frutas a:hover figcaption,.verduras a:hover figcaption,.plantas a:hover figcaption,.cereales a:hover figcaption{
@@ -157,8 +206,8 @@
 
 .main .frutas img,.verduras img,.plantas img,.cereales img{
 	overflow: hidden;
-	height: 75px;
-	width: 75px;
+    height: 80%;
+	width: 90%;
 }
 
 
@@ -223,13 +272,83 @@
     vertical-align: middle;
     cursor:pointer;
 }
+.main #ingresar{
+    background-image:url(/images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+    width: 100vw;
+}
+.main #formulario-ingresar{
+    margin-top: 8vh;
+    height: 45vh;
+    width: 90vw;
+    margin: 5vw;
+    padding: 3%;
+    background-color: rgba(255,250,250,0.);
+    -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+}
+
+
+
+.main #formulario-ingresar div{
+    margin: 5vw;
+    width: 95%;
+  
+}
 
 
 .main #formulario .radios div input[type="radio"]:checked + label span{
     background: url(/images/radio_sheet.png) -57px top no-repeat;
 }
+#form-registro{
+    box-sizing: border-box;
+    background-color: rgba(255,250,250,0.);
+    border:3px solid red;
+    overflow: hidden;
+    -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
+    
+}
 
 
+@media screen and (min-width: 450px){
+    .main .logo{
+	height: 100vh;
+	margin: 2% 1% 2% 4%;
+	width: 55vw;
+    float: left;
+       
+}
+    .main #titulo-index{
+        float:left;
+        width: 35vw;
+        margin-top: 50vh; 
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+        
+    }
+    .main .frutas, .verduras, .plantas,.cereales{
+	   height: 60vh;
+       width:30vw;
+    }
+    .main .frutas a figcaption,.verduras a figcaption,.plantas a figcaption,.cereales a figcaption{
+        font-size: 1.3em;
+    }
+    .main #formulario-ingresar{
+  
+    height: 90vh;
+    margin: 5vw;
+    padding: 1%;
+}
+}
 
 
 
