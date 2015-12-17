@@ -36,3 +36,7 @@ exports.create = function(req, res) {
 exports.perfil = function(req, res){
 	res.render('sesion/perfil');
 };
+
+exports.notas = function(req, res){
+	res.render('sesion/notas');
+};

@@ -25,7 +25,7 @@ router.get('/menu/cereal',enutritionController.cereal);
 router.get('/sesion/registro',enutritionController.registro);
 router.post('/sesion/create',enutritionController.create);
 router.get('/perfil',enutritionController.perfil);
-
+router.get('/notas',enutritionController.notas);
 
 
 module.exports = router;
