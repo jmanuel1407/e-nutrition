@@ -155,8 +155,9 @@
 	width: 100%;
 }
 
-.main .descripcion{
-	display: none;
+#div-des{
+	width: 0;
+    overflow: hidden;
 }
                             
 .main #contenedor-frutas,.main #contenedor-verduras,.main #contenedor-plantas,.main #contenedor-cereales {
@@ -217,7 +218,7 @@
 	width: 100%;
 }
 
-.main #formulario div,.main #formulario-ingresar div{
+.main #formulario #form-registro div,.main #formulario-ingresar div{
 	height: 40px;
 	margin-top:1%;
 	width: 100%;
@@ -243,34 +244,19 @@
 	margin-top: 2%;
 	width: 50%;
 }
-
-.main #formulario input[type="radio"]{
-    display: none;
-}
-
 .main #formulario .radios{
-	overflow: hidden;
+	height: 300px;
+    width: 10%;
+    text-align: center;
 }
-
-.main #formulario .radios div{
-	margin-left: 30%;
-	height: 35px;
-	width: 65%;
+.main #formulario input[type="radio"]{
+    width: 9%;
+    float: left;
+    
 }
-
-.main #formulario .radios div label{
-	height: 100%;
-	width: 50%;
-}
-
-.main #formulario .radios div input[type="radio"] + label span{
-	display: inline-block;
-    width: 19px;
-    height: 19px;
-    background: url(/images/radio_sheet.png) -38px top no-repeat;
-    margin: -1px 4px 0 0;
-    vertical-align: middle;
-    cursor:pointer;
+.labelsexo{
+    float: left;
+    width: 10%;
 }
 .main #ingresar{
     background-image:url(/images/fondo.jpg);
@@ -279,18 +265,19 @@
     height: 100vh;
     width: 100vw;
 }
-.main #formulario-ingresar{
+.main #formulario-ingresar, #form-registro {
     margin-top: 8vh;
-    height: 45vh;
     width: 90vw;
     margin: 5vw;
     padding: 3%;
-    background-color: rgba(255,250,250,0.);
     -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
     -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
     box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
 }
-
+.main #formulario-ingresar{
+    height: 45vh;
+    background-color: rgba(255,250,250,0.5);
+}
 
 
 .main #formulario-ingresar div{
@@ -303,19 +290,15 @@
 .main #formulario .radios div input[type="radio"]:checked + label span{
     background: url(/images/radio_sheet.png) -57px top no-repeat;
 }
-#form-registro{
-    box-sizing: border-box;
-    background-color: rgba(255,250,250,0.);
-    border:3px solid red;
-    overflow: hidden;
-    -webkit-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
-    -moz-box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
-    box-shadow: -9px 2px 88px -26px rgba(0,0,0,0.75);
-    
+#form-registro {
+    height: 400px;
 }
+/*
+Orientación horizontal cel
+}*/
 
 
-@media screen and (min-width: 450px){
+@media screen and (min-width: 450px) and (max-width: 960px){ 
     .main .logo{
 	height: 100vh;
 	margin: 2% 1% 2% 4%;
@@ -352,7 +335,6 @@
 
 
 
-
 /*Tables+*************************************
 ****************************************
 ************************************************************************************************************************
@@ -378,7 +360,6 @@
 	}
 
 	.categorias{
-	    background: #31be5e;
 	    display: block;
 	    float:left;
 	    height:60vh;
@@ -400,47 +381,29 @@
 
 	.categorias .menu ul li{
 		height: 10vh;
+        width: 100%;
 	}
 
 	.categorias .menu ul li a{
 		height: 100%;
 	}
 
-	.categorias .menu figure{
-		background-color:#179f12; 
-		display: block;
-		height: 100%;
-		width: 100%;
-	}
-
-	.categorias .menu figure img{
-		height: 50%;
-		display: block;
-		width: 35%;
-	}
-
-	.categorias .menu figcaption{
-		height: 2vh;
-		color:#fff;
-		width:100%;
-	}
+	
 
 	.main{
-		border: 1px solid #999;
-		float:right;
+		float:left;
 		height: 75vh;
-		margin-right: 5%;
-		margin-top: 0;
+		margin-top: 2px;
 		overflow: hidden;
-		width: 65%;
-		z-index: 15;
+		width: 70%;
 	}
 
 	.main .logo{
 		height: 80%;
-		margin: 5% 0 0 5%;
+		margin: 2% 0 0 2%;
 		text-align: center;
-		width: 45%;
+		width: 53%;
+        float: left;
 	}
 
 	.logo img{
@@ -449,21 +412,22 @@
 	}
 
 	#titulo-index{
-		color:#0c7b9b;
-		font-size: 3rem;
-		text-decoration: underline;
-		width: 45%;
+		display: none;
 	}
 
 	.descripcion{
 		color: #2d8a6f;
 		font-family: sans-serif;
-		font-size: 1.2rem;
-		margin-left: 7.5%;
-		margin-top: 2%;
+		font-size: 1.5rem;
 		text-align: justify;
-		width: 85%;
+		width: 100%;
 	}
+    #div-des{
+        width: 42%;
+        float: left;
+        margin-left:2%;
+        padding-top: 5%;
+    }
 
 	.main .titulo-section{
 		color:#0c7b9b;
@@ -473,14 +437,9 @@
 		width: 100%;
 	}
 
-	.main #contenedor-frutas,#contenedor-verduras,#contenedor-plantas {
-		box-sizing:border-box;
-		display: flex;
-		flex-wrap:wrap;
-	}
 
 	.main .frutas, .verduras, .plantas{
-		height: 30%;
+		height: 50%;
 		margin:2% 0 0 3%;
 		text-align: center;
 		width: 15%;
@@ -500,28 +459,8 @@
 	}
 }
 
-/*Empieza el nuevo diseño para escritorio
-----------------------------------------
-------------------------------------------
---------------------------*******************************
-***********************************************************************
-*********************************************************************
-****************************************************************************************
-**********************************************************************************************
+/*Empieza el nuevo diseño para escritorio*/
 
-*****************************************************************************************
-*************************************************************************************************
-******************************************************************************************************
-**********************************************************************************************
-*****************************************************************************************
-*************************************************************************************************
-******************************************************************************************************
-**********************************************************************************************
-*****************************************************************************************
-*************************************************************************************************
-******************************************************************************************************
-**********************************************************************************************
----*/
 @media screen and (min-width: 1200px){
 	html{
 		padding: 0 5% 0 5%;
@@ -634,7 +573,6 @@
 	.main #titulo-index{
 		color:#0c7b9b;
 		font-size: 3rem;
-		margin-left: 40%;
 		text-decoration: underline;
 		width: 40%;
 	}
